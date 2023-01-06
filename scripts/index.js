@@ -87,28 +87,47 @@ var finances = [
 ['Feb-2017', 671099]
 ];
 
-let total = 0;
-let changeTotal = 0;
-let largestIncrease = ["", 0];
+let total = 0; // Running total
+let changeTotal = 0; // Running total of changes
+let largestIncrease = ["", 0]; 
 let largestDecrease = ["", 0];
+
+// Loop over the finances array
 for (let i = 0; i < finances.length; i++) {
+    // Add the months profit/loss to the total
     total += finances[i][1];
+
+    // Only check the change once past the first month
     if (i > 0) {
+        // Change in profit/loss from last month to this month
         let change = (finances[i][1] - finances[i-1][1]);
+
         if (change > largestIncrease[1]) {
+            // If change is larger than current largest month update stored value
             largestIncrease = [finances[i][0], change]
         } else if (change < largestDecrease[1]) {
+            // If change is less than current smallest month update stored value
             largestDecrease = [finances[i][0], change]
         }
+        // Add current month's change to the running total
         changeTotal += change;
     }
 }
 
+// Divide total change by the number of months MINUS 1 as I only started calculating changes from the second month
+// Only needs to be to two decimal places
+let averageChange = (changeTotal / (finances.length - 1)).toFixed(2);
+
+// Put the text output in a variable for logging to console/browser
 let msg =`Total Months: ${finances.length}
 Total: $${total}
-Average Change: $${(changeTotal / (finances.length - 1)).toFixed(2)}
+Average Change: $${averageChange}
 Greatest Increase in Profits: ${largestIncrease[0]} ($${largestIncrease[1]})
 Greatest Derease in Profits: ${largestDecrease[0]} ($${largestDecrease[1]})`;
 
+// Log output to the console
 console.log(msg);
+
+// Display output in the browser just for the fun of it.
+// Don't use document.write ordinarilly!
 document.write(`<pre>${msg}</pre>`);
