@@ -97,7 +97,7 @@ for (let i = 0; i < finances.length; i++) {
         let change = (finances[i][1] - finances[i-1][1]);
         if (change > largestIncrease[1]) {
             largestIncrease = [finances[i][0], change]
-        } else if (change < 0 && change < largestDecrease[1]) {
+        } else if (change < largestDecrease[1]) {
             largestDecrease = [finances[i][0], change]
         }
         changeTotal += change;
