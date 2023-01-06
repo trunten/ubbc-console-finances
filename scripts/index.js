@@ -86,3 +86,26 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+
+let total = 0;
+let changeTotal = 0;
+let largestIncrease = ["", 0];
+let largestDecrease = ["", 0];
+for (let i = 0; i < finances.length; i++) {
+    total += finances[i][1];
+    if (i > 0) {
+        let change = (finances[i][1] - finances[i-1][1]);
+        if (change > largestIncrease[1]) {
+            largestIncrease = [finances[i][0], change]
+        } else if (change < 0 && change < largestDecrease[1]) {
+            largestDecrease = [finances[i][0], change]
+        }
+        changeTotal += change;
+    }
+}
+
+console.log(`Total Months: ${finances.length}`);
+console.log(`Total: $${total}`);
+console.log(`Average Change: $${(changeTotal / (finances.length - 1)).toFixed(2)}`);
+console.log(`Greatest Increase in Profits: ${largestIncrease[0]}: $${largestIncrease[1]}`);
+console.log(`Greatest Derease in Profits: ${largestDecrease[0]}: $${largestDecrease[1]}`);
