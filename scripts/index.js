@@ -104,8 +104,10 @@ for (let i = 0; i < finances.length; i++) {
     }
 }
 
-console.log(`Total Months: ${finances.length}`);
-console.log(`Total: $${total}`);
-console.log(`Average Change: $${(changeTotal / (finances.length - 1)).toFixed(2)}`);
-console.log(`Greatest Increase in Profits: ${largestIncrease[0]} ($${largestIncrease[1]})`);
-console.log(`Greatest Derease in Profits: ${largestDecrease[0]} ($${largestDecrease[1]})`);
+let msg =`Total Months: ${finances.length}
+Total: $${total}
+Average Change: $${(changeTotal / (finances.length - 1)).toFixed(2)}
+Greatest Increase in Profits: ${largestIncrease[0]} ($${largestIncrease[1]})
+Greatest Derease in Profits: ${largestDecrease[0]} ($${largestDecrease[1]})`;
+
+console.log(msg);
