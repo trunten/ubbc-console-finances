@@ -111,3 +111,4 @@ Greatest Increase in Profits: ${largestIncrease[0]} ($${largestIncrease[1]})
 Greatest Derease in Profits: ${largestDecrease[0]} ($${largestDecrease[1]})`;
 
 console.log(msg);
+document.write(`<pre>${msg}</pre>`);
