@@ -134,11 +134,17 @@ outputMessage(msg);
 
 async function outputMessage(msg) {
     let output = document.getElementById("output");
+    let redLight = document.getElementById("red-light");
     output.innerHTML = "<span class='blink'> </span>"
     await new Promise(r => setTimeout(r, 3000));
+    redLight.classList.remove("hide");
+    redLight.classList.add("blink-fast")
     for (let i = 0; i < msg.length; i++) {
         await new Promise(r => setTimeout(r, 50));
         output.innerHTML = msg.substr(0, i + 1) + "<span> </span>";
     }
     output.innerHTML = msg + "<span class='blink'> </span>"
+    redLight.classList.remove("blink-fast")
+    //await new Promise(r => setTimeout(r, 1000)); //Possible add delay to simulate final read/write?
+    redLight.classList.add("hide");
 }

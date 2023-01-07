@@ -46,9 +46,29 @@ body {
   pre span {
     background-color: rgb(155, 228, 45);
   }
-  
+
+  #red-light {
+    width: 2.21%;
+    height: 1.065%;
+    font-size: 0px;
+    background-color: rgb(233, 11, 11);
+    position: absolute;
+    top: 83.44%;
+    left: 38.63%;
+    display: none;
+    border-radius: 2px;
+  }
+
+  .hide {
+    display: none !important;
+  }
+
   .blink {
     animation: blink 1s steps(2) infinite;
+  }
+
+  .blink-fast {
+    animation: blink 0.2s steps(2) infinite;
   }
 
   @keyframes blink {
@@ -62,6 +82,7 @@ body {
     .small { display: unset; }
     #output {font-size: 16px !important; }
     #textContent { position: static; width: 100%;}
+    #red-light {display: none !important;}
   }
 
   @media screen and (max-width: 650px) {
@@ -69,7 +90,12 @@ body {
     #output {font-size: 2.3vw; }
   }
 
+  @media screen and (min-width: 800px) {
+    #red-light { display: initial };
+  }
+
   @media screen and (min-width: 1000px) {
     h1 { font-size: 11px; }
     #output { font-size: 16px; }
+    #red-light { display: initial };
   }
