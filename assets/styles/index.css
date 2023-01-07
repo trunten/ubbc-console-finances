@@ -84,15 +84,19 @@ body {
     #red-light {display: none !important;}
   }
 
-  @media screen and (min-width: 375px) and (max-width: 540px) {
-    #red-light { top: 82.91% !important; left: 38.68%}
+  @media screen and (max-width: 400px) {
+    #red-light { top: 82.8% !important;}
   }
 
-  @media screen and (min-width: 541px) and (max-width: 550px) {
-    #red-light { top: 82.93% !important; left: 38.68%}
+  @media screen and (max-width: 500px) {
+    #red-light { top: 82.90%;}
   }
 
-  @media screen and (min-width: 551px) and (max-width: 650px) {
+  @media screen and (max-width: 550px) {
+    #red-light { top: 82.93%; left: 38.68%}
+  }
+
+  @media screen and (max-width: 650px) {
     img { width: 99%; }
     #output {font-size: 2.3vw; }
     #red-light { top: 83%; left: 38.5%}
@@ -105,5 +109,4 @@ body {
   @media screen and (min-width: 1000px) {
     h1 { font-size: 11px; }
     #output { font-size: 16px; }
-    #red-light { display: initial; };
   }

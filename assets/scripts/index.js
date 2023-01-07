@@ -130,7 +130,7 @@ console.log(msg);
 
 // Display output in the browser just for the fun of it.
 // document.getElementById("output").innerHTML = msg + "<span class='blink'> </span>"
-outputMessage(msg);
+window.onload = () => outputMessage(msg);
 
 async function outputMessage(msg) {
     let output = document.getElementById("output");
