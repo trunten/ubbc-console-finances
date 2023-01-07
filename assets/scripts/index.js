@@ -129,5 +129,16 @@ Greatest Derease in Profits: ${largestDecrease[0]} ($${largestDecrease[1]})`;
 console.log(msg);
 
 // Display output in the browser just for the fun of it.
-// Don't use document.write ordinarilly!
-document.getElementById("output").innerHTML =`<pre>${msg}</pre>`;
+// document.getElementById("output").innerHTML = msg + "<span class='blink'> </span>"
+outputMessage(msg);
+
+async function outputMessage(msg) {
+    let output = document.getElementById("output");
+    output.innerHTML = "<span class='blink'> </span>"
+    await new Promise(r => setTimeout(r, 3000));
+    for (let i = 0; i < msg.length; i++) {
+        await new Promise(r => setTimeout(r, 50));
+        output.innerHTML = msg.substr(0, i + 1) + "<span> </span>";
+    }
+    output.innerHTML = msg + "<span class='blink'> </span>"
+}

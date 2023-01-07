@@ -28,11 +28,8 @@ body {
 
   #output {
     margin-top: -10px;
-  }
-
-  #output pre {
     padding-left: 2%;
-    font-size: 1.5vw;
+    font-size: 1.7vw;
     overflow-x: auto;
     white-space: pre-wrap;
     word-wrap: break-word;
@@ -46,21 +43,33 @@ body {
     display: none;
   }
 
+  pre span {
+    background-color: rgb(155, 228, 45);
+  }
+  
+  .blink {
+    animation: blink 1s steps(2) infinite;
+  }
+
+  @keyframes blink {
+    0% {visibility: hidden;}
+  }
+
   @media screen and (max-width: 374px) {
     img { display: none; }
     h1 pre {font-size: 10px; }
     .large { display: none; }
     .small { display: unset; }
-    #output pre {font-size: 16px !important; }
+    #output {font-size: 16px !important; }
     #textContent { position: static; width: 100%;}
   }
 
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 650px) {
     img { width: 99%; }
-    #output pre {font-size: 2vw; }
+    #output {font-size: 2.3vw; }
   }
 
   @media screen and (min-width: 1000px) {
     h1 { font-size: 11px; }
-    #output pre { font-size: 16px; }
+    #output { font-size: 16px; }
   }
