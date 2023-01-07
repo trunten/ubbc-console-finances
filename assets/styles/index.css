@@ -44,7 +44,7 @@ body {
   }
 
   pre span {
-    background-color: rgb(155, 228, 45);
+    background-color: rgb(142, 208, 42);
   }
 
   #red-light {
@@ -53,10 +53,9 @@ body {
     font-size: 0px;
     background-color: rgb(233, 11, 11);
     position: absolute;
-    top: 83.44%;
+    top: 83.44%; 
     left: 38.63%;
-    display: none;
-    border-radius: 2px;
+    border-radius: 1px;
   }
 
   .hide {
@@ -85,17 +84,26 @@ body {
     #red-light {display: none !important;}
   }
 
-  @media screen and (max-width: 650px) {
-    img { width: 99%; }
-    #output {font-size: 2.3vw; }
+  @media screen and (min-width: 375px) and (max-width: 540px) {
+    #red-light { top: 82.91% !important; left: 38.68%}
   }
 
-  @media screen and (min-width: 800px) {
-    #red-light { display: initial };
+  @media screen and (min-width: 541px) and (max-width: 550px) {
+    #red-light { top: 82.93% !important; left: 38.68%}
+  }
+
+  @media screen and (min-width: 551px) and (max-width: 650px) {
+    img { width: 99%; }
+    #output {font-size: 2.3vw; }
+    #red-light { top: 83%; left: 38.5%}
+  }
+
+  @media screen and (max-width: 800px) {
+    #red-light { top: 83.25%; width: 2.15%; }
   }
 
   @media screen and (min-width: 1000px) {
     h1 { font-size: 11px; }
     #output { font-size: 16px; }
-    #red-light { display: initial };
+    #red-light { display: initial; };
   }
