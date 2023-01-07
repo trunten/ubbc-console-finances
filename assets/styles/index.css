@@ -84,7 +84,7 @@ body {
     #red-light {display: none !important;}
   }
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 414px) {
     #red-light { top: 82.8% !important;}
   }
 
