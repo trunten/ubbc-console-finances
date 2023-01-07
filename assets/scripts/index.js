@@ -130,4 +130,4 @@ console.log(msg);
 
 // Display output in the browser just for the fun of it.
 // Don't use document.write ordinarilly!
-document.write(`<pre>${msg}</pre>`);
+document.getElementById("output").innerHTML =`<pre>${msg}</pre>`;

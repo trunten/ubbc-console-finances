@@ -1,0 +1,66 @@
+body {
+    background-color: black;
+  }
+
+  main {
+    color: greenyellow; 
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+  }
+
+  pre {
+    font-family:'Courier New', Courier, monospace; 
+    text-align: initial;
+  }
+
+  h1 {
+    font-size: 1.1vw;
+  }
+
+  #textContent {
+    width: 59%;
+    position: absolute;
+    top: 15%;
+    left: 16%;
+  }
+
+  #output {
+    margin-top: -10px;
+  }
+
+  #output pre {
+    padding-left: 2%;
+    font-size: 1.5vw;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  img {
+    width: 97%;
+  }
+
+  .small {
+    display: none;
+  }
+
+  @media screen and (max-width: 320px) {
+    img { display: none; }
+    h1 pre {font-size: 10px; }
+    .large { display: none; }
+    .small { display: unset; }
+    #output pre {font-size: 16px !important; }
+    #textContent { position: static; width: 100%;}
+  }
+
+  @media screen and (max-width: 800px) {
+    img { width: 99%; }
+    #output pre {font-size: 2vw; }
+  }
+
+  @media screen and (min-width: 1000px) {
+    h1 { font-size: 11px; }
+    #output pre { font-size: 15px; }
+  }
