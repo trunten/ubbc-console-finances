@@ -123,9 +123,7 @@ for (let i = 0; i < finances.length; i++) {
 let averageChange = (changeTotal / (finances.length - 1)).toFixed(2);
 
 // Put the text output in a variable for logging to console/browser
-let msg =`Total Months: ${finances.length}
-Total: $${total}
-Average Change: $${averageChange}`
+let msg =`Total Months: ${finances.length}\nTotal: $${total}\nAverage Change: $${averageChange}`
 // Only Include largest increase message if there was any month that reported an increase on the previous month
 if (largestIncrease[0]) { msg += `\nGreatest Increase in Profits: ${largestIncrease[0]} ($${largestIncrease[1]})` }
 // Only Include largest decrease message if there was any month that reported a decrease on the previous month
