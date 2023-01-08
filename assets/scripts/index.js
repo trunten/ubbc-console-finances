@@ -101,7 +101,7 @@ for (let i = 0; i < finances.length; i++) {
     // Add the months profit/loss to the total
     total += finances[i][1];
 
-    // Only check the change once past the first month
+    // Only check the change once past the first month (No previous month for Jan-2010)
     if (i > 0) {
         // Change in profit/loss from last month to this month
         let change = (finances[i][1] - finances[i-1][1]);
@@ -137,20 +137,20 @@ console.log("Financial Analysis\n----------------------------\n" + msg);
 window.onload = () => outputMessage(msg);
 
 
-// Outputs statistics to the browser one character at a time for a bit of fun
+// Outputs statistics (msg variable) to the browser one character at a time for a bit of fun.
 async function outputMessage(msg) {
     let output = document.getElementById("output");
-    // let redLight = document.getElementById("red-light");
+    let redLight = document.getElementById("red-light");
     output.innerHTML = "<span class='blink'> </span>"
     await new Promise(r => setTimeout(r, 3000));
-    // redLight.classList.remove("hide");
-    // redLight.classList.add("blink-fast")
+    redLight.classList.remove("hide");
+    redLight.classList.add("blink-fast")
     for (let i = 0; i < msg.length; i++) {
         await new Promise(r => setTimeout(r, 50));
         output.innerHTML = msg.substr(0, i + 1) + "<span> </span>";
     }
     output.innerHTML = msg + "<span class='blink'> </span>"
-    // redLight.classList.remove("blink-fast")
-    // await new Promise(r => setTimeout(r, 1000)); //Possible add delay to simulate final read/write?
-    // redLight.classList.add("hide");
+    redLight.classList.remove("blink-fast")
+    await new Promise(r => setTimeout(r, 1000)); //Possible add delay to simulate final read/write?
+    redLight.classList.add("hide");
 }

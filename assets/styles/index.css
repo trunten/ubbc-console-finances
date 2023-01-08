@@ -50,15 +50,14 @@ body {
     background-color: rgb(142, 208, 42);
   }
 
-  /* Positionaing and sizing for my floppy drive light. Not currently using because it
-     was inconsistent on mobile devices. May add again later if I think of a better way */
-  /* #red-light {
+  /* Positionaing and sizing for my floppy drive light */
+  #red-light {
     position: absolute;
     top: 0%; 
-    left: 0%;
-    z-index: 2; /* z-index 2 so it definitely appears above all other elements *\
-    height: 100%;
-  } */
+    left: 1.5%;
+    z-index: 2; /* z-index 2 so it definitely appears above all other elements */
+    width: 97%;
+  }
 
   /* Used to hide elements I only want to show on smaller screen sizes */
   .small {
@@ -75,10 +74,10 @@ body {
     animation: blink 1s steps(2) infinite;
   }
 
-  /* Makes an element with this class blink on/off really fast! - used on the floppy light (currently disbled) */
-  /* .blink-fast {
+  /* Makes an element with this class blink on/off really fast! - used on the floppy light */
+  .blink-fast {
     animation: blink 0.2s steps(2) infinite;
-  } */
+  }
 
   /* Animation for element blinking */
   /* https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes */
@@ -89,15 +88,16 @@ body {
   /* Media queries for responsive stlyes */
   @media screen and (max-width: 374px) {
     img { display: none; }
-    h1 pre {font-size: 10px; }
+    h1 pre { font-size: 10px; }
     .large { display: none; }
     .small { display: unset; }
-    #output {font-size: 16px !important; }
-    #red-light {display: none !important;}
-    #textContent { position: static; width: 100%;}
+    #output { font-size: 16px !important; }
+    #red-light { display: none !important; }
+    #textContent { position: static; width: 100%; }
   }
 
   @media screen and (max-width: 650px) {
     img { width: 99%; }
-    #output {font-size: 2.3vw; }
+    #red-light { left: 0.5% !important; width: 99%; }
+    #output { font-size: 2.3vw; }
   }
