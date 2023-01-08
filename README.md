@@ -34,6 +34,7 @@ N/A
 ## Credits
 - Wrapping text in \<pre\> elements: https://www.w3docs.com/snippets/css/how-to-wrap-text-in-a-pre-tag-with-css.html
 - ASCII art headers: http://www.figlet.org
+- Apple II image: [Radek Ciechanowski](https://dribbble.com/shots/14577323-Apple-II-Model-E-8-bit-Microcomputer)
 
 ## License
 Please refer to the [LICENSE (MIT)](LICENSE) in the repo.
