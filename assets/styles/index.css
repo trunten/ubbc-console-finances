@@ -48,14 +48,11 @@ body {
   }
 
   #red-light {
-    width: 2.21%;
-    height: 1.065%;
-    font-size: 0px;
-    background-color: rgb(233, 11, 11);
     position: absolute;
-    top: 83.44%; 
-    left: 38.63%;
-    border-radius: 1px;
+    top: 0%; 
+    left: 0%;
+    z-index: 2;
+    height: 100%;
   }
 
   .hide {
@@ -84,26 +81,9 @@ body {
     #red-light {display: none !important;}
   }
 
-  @media screen and (max-width: 414px) {
-    #red-light { top: 82.8% !important;}
-  }
-
-  @media screen and (max-width: 500px) {
-    #red-light { top: 82.90%;}
-  }
-
-  @media screen and (max-width: 550px) {
-    #red-light { top: 82.93%; left: 38.68%}
-  }
-
   @media screen and (max-width: 650px) {
     img { width: 99%; }
     #output {font-size: 2.3vw; }
-    #red-light { top: 83%; left: 38.5%}
-  }
-
-  @media screen and (max-width: 800px) {
-    #red-light { top: 83.25%; width: 2.15%; }
   }
 
   @media screen and (min-width: 1000px) {
