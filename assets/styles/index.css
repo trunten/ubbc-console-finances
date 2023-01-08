@@ -34,7 +34,7 @@ body {
     margin-top: -10px;
     padding-left: 2%;
     font-size: min(1.7vw, 16px); /* Font size will be the smaller of the 2 values to set a dynamic font size with a maximum */
-    /* The following 3 lines allow tet wrapping even though it's a <pre> element: https://www.w3docs.com/snippets/css/how-to-wrap-text-in-a-pre-tag-with-css.html*/
+    /* The following 3 lines allow tet wrapping even though it's a <pre> element: https://www.w3docs.com/snippets/css/how-to-wrap-text-in-a-pre-tag-with-css.html */
     overflow-x: auto;
     white-space: pre-wrap;
     word-wrap: break-word;

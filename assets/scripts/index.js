@@ -126,7 +126,7 @@ Greatest Increase in Profits: ${largestIncrease[0]} ($${largestIncrease[1]})
 Greatest Derease in Profits: ${largestDecrease[0]} ($${largestDecrease[1]})`;
 
 // Log output to the console
-console.log(msg);
+console.log("Financial Analysis\n----------------------------\n" + msg);
 
 // Display output in the browser just for the fun of it.
 // document.getElementById("output").innerHTML = msg + "<span class='blink'> </span>"
