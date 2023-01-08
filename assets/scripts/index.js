@@ -89,6 +89,10 @@ var finances = [
 
 let total = 0; // Running total
 let changeTotal = 0; // Running total of changes
+
+// Initialising index 0 so if no month gets recorded I can use truthiness to only include the increase/decrease 
+// statements if they are required : https://developer.mozilla.org/en-US/docs/Glossary/Truthy
+// Initialising index 1 to zero because only changes above or below zero can be considered as an increase or decrease respectively 
 let largestIncrease = ["", 0]; 
 let largestDecrease = ["", 0];
 
@@ -114,16 +118,18 @@ for (let i = 0; i < finances.length; i++) {
     }
 }
 
-// Divide total change by the number of months MINUS 1 as I only started calculating changes from the second month
+// Divide total change by the number of months MINUS 1 as I can only start calculating changes from the second month
 // Only needs to be to two decimal places
 let averageChange = (changeTotal / (finances.length - 1)).toFixed(2);
 
 // Put the text output in a variable for logging to console/browser
 let msg =`Total Months: ${finances.length}
 Total: $${total}
-Average Change: $${averageChange}
-Greatest Increase in Profits: ${largestIncrease[0]} ($${largestIncrease[1]})
-Greatest Derease in Profits: ${largestDecrease[0]} ($${largestDecrease[1]})`;
+Average Change: $${averageChange}`
+// Only Include largest increase message if there was any month that reported an increase on the previous month
+if (largestIncrease[0]) { msg += `\nGreatest Increase in Profits: ${largestIncrease[0]} ($${largestIncrease[1]})` }
+// Only Include largest decrease message if there was any month that reported a decrease on the previous month
+if (largestDecrease[0]) { msg += `\nGreatest Decrease in Profits: ${largestDecrease[0]} ($${largestDecrease[1]})` }
 
 // Log output to the console
 console.log("Financial Analysis\n----------------------------\n" + msg);
@@ -132,6 +138,8 @@ console.log("Financial Analysis\n----------------------------\n" + msg);
 // document.getElementById("output").innerHTML = msg + "<span class='blink'> </span>"
 window.onload = () => outputMessage(msg);
 
+
+// Outputs statistics to the browser one character at a time for a bit of fun
 async function outputMessage(msg) {
     let output = document.getElementById("output");
     // let redLight = document.getElementById("red-light");
