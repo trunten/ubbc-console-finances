@@ -75,7 +75,7 @@ body {
     animation: blink 1s steps(2) infinite;
   }
 
-  /* Makes an element with this class blink on/off really fast! - used on the floppy light */
+  /* Makes an element with this class blink on/off really fast! - used on the floppy light (currently disbled) */
   /* .blink-fast {
     animation: blink 0.2s steps(2) infinite;
   } */
