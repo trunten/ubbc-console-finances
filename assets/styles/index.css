@@ -2,23 +2,26 @@ body {
     background-color: black;
   }
 
+  /* Main element which contains all my images/content */
   main {
     color: greenyellow; 
     max-width: 1000px;
     margin: 0 auto;
-    position: relative;
+    position: relative; /* Position relative so I can place textContent in relation to this container: https://developer.mozilla.org/en-US/docs/Web/CSS/position */
     text-align: center;
   }
 
+  /* Pre tags for javascript code and ascii header */
   pre {
     font-family:'Courier New', Courier, monospace; 
-    text-align: initial;
+    text-align: initial; /* Override center alignment on main element */
   }
 
   h1 {
-    font-size: min(1.1vw, 11px);
+    font-size: min(1.1vw, 11px); /* Font size will be the smaller of the 2 values to set a dynamic font size with a maximum */
   }
 
+  /* Main text content: contains header and output from javascript */
   #textContent {
     width: 59%;
     position: absolute;
@@ -26,51 +29,64 @@ body {
     left: 16%;
   }
 
+  /* Contains output from my javascript code */
   #output {
     margin-top: -10px;
     padding-left: 2%;
-    font-size: min(1.7vw, 16px);
+    font-size: min(1.7vw, 16px); /* Font size will be the smaller of the 2 values to set a dynamic font size with a maximum */
+    /* The following 3 lines allow tet wrapping even though it's a <pre> element: https://www.w3docs.com/snippets/css/how-to-wrap-text-in-a-pre-tag-with-css.html*/
     overflow-x: auto;
     white-space: pre-wrap;
     word-wrap: break-word;
   }
 
+  /* Give image a little bit more whitespace around it on larger sized screens */
   img {
     width: 97%;
   }
 
+  /* My Blinking cursor element - Colour slightly different to text as it looked wrong being so bright*/
   pre span {
     background-color: rgb(142, 208, 42);
   }
 
-  #red-light {
+  /* Positionaing and sizing for my floppy drive light. Not currently using because it
+     was inconsistent on mobile devices. May add again later if I think of a better way */
+  /* #red-light {
     position: absolute;
     top: 0%; 
     left: 0%;
-    z-index: 2;
+    z-index: 2; /* z-index 2 so it definitely appears above all other elements *\
     height: 100%;
-  }
+  } */
 
+  /* Used to hide elements I only want to show on smaller screen sizes */
   .small {
     display: none;
   }
 
+  /* Easy way to hide elements that can be turned on/off in javascript */
   .hide {
     display: none !important;
   }
 
+  /* Makes an element with this class blink on/off - used for my cursor */
   .blink {
     animation: blink 1s steps(2) infinite;
   }
 
-  .blink-fast {
+  /* Makes an element with this class blink on/off really fast! - used on the floppy light */
+  /* .blink-fast {
     animation: blink 0.2s steps(2) infinite;
-  }
+  } */
 
+  /* Animation for element blinking */
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes */
   @keyframes blink {
     0% {visibility: hidden;}
   }
 
+  /* Media queries for responsive stlyes */
   @media screen and (max-width: 374px) {
     img { display: none; }
     h1 pre {font-size: 10px; }
