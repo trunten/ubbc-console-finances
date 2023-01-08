@@ -25,6 +25,7 @@ N/A
 ## Usage
 - [Deployed Application](https://trunten.github.io/ubbc-console-finances/)
 - JavaScript is required for the site to function (make sure it is enabled).
+    - noscript tag included to alert the user that JavaScript is required.
 - Open the developer tools and view the console to see the application.
 - Preview of the output:
 [![Application Screenshot](./assets/images/application-screenshot.png)](https://trunten.github.io/ubbc-console-finances/)
