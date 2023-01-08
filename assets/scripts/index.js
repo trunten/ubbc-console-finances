@@ -151,6 +151,6 @@ async function outputMessage(msg) {
     }
     output.innerHTML = msg + "<span class='blink'> </span>"
     redLight.classList.remove("blink-fast")
-    await new Promise(r => setTimeout(r, 1000)); //Possible add delay to simulate final read/write?
+    await new Promise(r => setTimeout(r, 600)); // add delay to simulate final (longer) read/write
     redLight.classList.add("hide");
 }
